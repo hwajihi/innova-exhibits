@@ -1,0 +1,2110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Innova Exhibits — Exhibition & Brand Activation Studio · Nairobi</title>
+<meta name="description" content="Innova Exhibits designs and builds exhibition stands, brand collateral, and custom merchandise for trade shows and expos across East Africa. One team. One brief. One invoice.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,700;1,9..144,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════
+   TOKENS & RESET
+═══════════════════════════════════════ */
+:root {
+  --teal:   #0A3D47;
+  --teal2:  #134F5E;
+  --teal3:  #0D2F38;
+  --gold:   #C89535;
+  --terra:  #B54C3A;
+  --aqua:   #18B4BF;
+  --linen:  #F2E8D9;
+  --linen2: #E8D9C4;
+  --ink:    #0D1A1E;
+  --body:   #F7F4EF;
+  --text:   #1A1A1A;
+  --muted:  #6A6560;
+  --border: #E2DDD6;
+
+  --font-display: 'Fraunces', serif;
+  --font-heading: 'Playfair Display', serif;
+  --font-body:    'Plus Jakarta Sans', sans-serif;
+  --font-label:   'Space Mono', monospace;
+
+  --ease: cubic-bezier(.16,1,.3,1);
+  --nav-h: 72px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body { font-family: var(--font-body); background: var(--body); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+img { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+button { border: none; cursor: pointer; font-family: inherit; }
+
+/* ═══════════════════════════════════════
+   UTILITIES
+═══════════════════════════════════════ */
+.label {
+  font-family: var(--font-label);
+  font-size: 10px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.label--teal { color: var(--teal); }
+.label--muted { color: var(--muted); opacity: .7; }
+
+.rule {
+  display: inline-block;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--gold), var(--terra));
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.section-intro {
+  font-family: var(--font-label);
+  font-size: 9px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+
+.gradient-bar {
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--terra), var(--teal2));
+  border-radius: 2px;
+}
+
+/* Fade-in on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .7s var(--ease), transform .7s var(--ease);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: .1s; }
+.reveal-d2 { transition-delay: .2s; }
+.reveal-d3 { transition-delay: .3s; }
+.reveal-d4 { transition-delay: .4s; }
+
+/* ═══════════════════════════════════════
+   NAVIGATION
+═══════════════════════════════════════ */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  transition: background .4s ease, border-color .4s ease, box-shadow .4s ease;
+}
+.nav.scrolled {
+  background: rgba(13,31,40,.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid rgba(200,149,53,.2);
+  box-shadow: 0 4px 32px rgba(0,0,0,.24);
+}
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+}
+.nav-rule {
+  width: 3px;
+  height: 28px;
+  background: linear-gradient(180deg, var(--gold), var(--terra));
+  border-radius: 2px;
+}
+.nav-wordmark {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--linen);
+  line-height: 1;
+}
+.nav-descriptor {
+  font-family: var(--font-label);
+  font-size: 8px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: .65;
+  margin-top: 3px;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.nav-links a {
+  font-family: var(--font-label);
+  font-size: 11.5px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(242,232,217,.55);
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-cta {
+  margin-left: 32px;
+  padding: 10px 22px;
+  background: var(--gold);
+  color: var(--teal3);
+  font-family: var(--font-label);
+  font-size: 9.5px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 3px;
+  transition: background .2s, transform .15s;
+}
+.nav-cta:hover { background: #D9A23E; transform: translateY(-1px); }
+
+.nav-mobile-toggle {
+  display: none;
+  background: none;
+  color: var(--linen);
+  font-size: 22px;
+  padding: 8px;
+  margin-left: auto;
+}
+
+/* Mobile nav drawer */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: var(--nav-h);
+  left: 0; right: 0;
+  background: var(--teal3);
+  border-bottom: 0.5px solid rgba(200,149,53,.2);
+  z-index: 99;
+  padding: 20px 24px 28px;
+  flex-direction: column;
+  gap: 20px;
+}
+.mobile-nav.open { display: flex; }
+.mobile-nav a {
+  font-family: var(--font-label);
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(242,232,217,.6);
+  padding: 10px 0;
+  border-bottom: 0.5px solid rgba(200,149,53,.12);
+  transition: color .2s;
+}
+.mobile-nav a:hover { color: var(--gold); }
+.mobile-nav .nav-cta {
+  text-align: center;
+  display: block;
+  margin-left: 0;
+  margin-top: 8px;
+}
+
+/* ═══════════════════════════════════════
+   HERO
+═══════════════════════════════════════ */
+.hero {
+  min-height: 100vh;
+  background: var(--teal3);
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: var(--nav-h) 0 0;
+}
+.hero-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(200,149,53,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200,149,53,.04) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+}
+.hero-glow-left {
+  position: absolute;
+  left: -200px; top: 20%;
+  width: 600px; height: 600px;
+  background: radial-gradient(ellipse, rgba(10,61,71,.5) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-glow-right {
+  position: absolute;
+  right: -100px; bottom: 10%;
+  width: 500px; height: 500px;
+  background: radial-gradient(ellipse, rgba(200,149,53,.06) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero-rule {
+  position: absolute;
+  left: 0; top: 10%; bottom: 10%;
+  width: 4px;
+  background: linear-gradient(180deg, var(--gold), var(--terra));
+  border-radius: 0 2px 2px 0;
+}
+.hero-accent-bar {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold), var(--terra), var(--teal2));
+}
+
+.hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 60px;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 60px;
+  align-items: center;
+  width: 100%;
+}
+.hero-eyebrow {
+  font-family: var(--font-label);
+  font-size: 10px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: .8;
+  margin-bottom: 20px;
+  animation: fadeUp .8s var(--ease) .1s both;
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(44px, 6vw, 72px);
+  color: var(--linen);
+  line-height: 1.05;
+  margin-bottom: 10px;
+  animation: fadeUp .8s var(--ease) .2s both;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+.hero-tagline {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-style: italic;
+  color: rgba(242,232,217,.5);
+  margin-bottom: 24px;
+  animation: fadeUp .8s var(--ease) .3s both;
+}
+.hero-body {
+  font-size: 15px;
+  color: rgba(242,232,217,.6);
+  line-height: 1.75;
+  max-width: 520px;
+  margin-bottom: 40px;
+  animation: fadeUp .8s var(--ease) .4s both;
+}
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  animation: fadeUp .8s var(--ease) .5s both;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: var(--gold);
+  color: var(--teal3);
+  font-family: var(--font-label);
+  font-size: 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 3px;
+  transition: background .2s, transform .15s, box-shadow .2s;
+}
+.btn-primary:hover {
+  background: #D9A23E;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(200,149,53,.3);
+}
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border: 0.5px solid rgba(242,232,217,.25);
+  color: rgba(242,232,217,.7);
+  font-family: var(--font-label);
+  font-size: 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  transition: border-color .2s, color .2s, background .2s;
+}
+.btn-secondary:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(200,149,53,.06);
+}
+
+/* Hero stat card */
+.hero-stats {
+  animation: fadeUp .8s var(--ease) .4s both;
+}
+.stat-card {
+  background: rgba(10,61,71,.6);
+  border: 0.5px solid rgba(200,149,53,.2);
+  border-radius: 10px;
+  padding: 28px;
+  backdrop-filter: blur(8px);
+  position: relative;
+  overflow: hidden;
+}
+.stat-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--gold), var(--terra));
+}
+.stat-item {
+  padding: 18px 0;
+  border-bottom: 0.5px solid rgba(200,149,53,.12);
+}
+.stat-item:last-child { border-bottom: none; padding-bottom: 0; }
+.stat-item:first-child { padding-top: 0; }
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 40px;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.stat-label {
+  font-family: var(--font-label);
+  font-size: 9px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(242,232,217,.4);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══════════════════════════════════════
+   ABOUT / POSITIONING
+═══════════════════════════════════════ */
+.about {
+  padding: 120px 0;
+  background: var(--linen);
+  position: relative;
+}
+.about-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.about-label { margin-bottom: 16px; }
+.about-heading {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 48px);
+  color: var(--teal);
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+.about-heading em { font-style: italic; color: var(--terra); }
+.about-body {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+.about-positioning {
+  background: var(--teal3);
+  border-radius: 8px;
+  padding: 24px 28px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 8px;
+}
+.about-positioning::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--gold), var(--terra));
+}
+.about-positioning p {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-style: italic;
+  color: var(--linen);
+  line-height: 1.65;
+  padding-left: 14px;
+}
+.about-right {}
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.value-item {
+  background: white;
+  border-radius: 8px;
+  border: 0.5px solid var(--border);
+  padding: 20px;
+  border-left: 3px solid var(--gold);
+}
+
+.value-item:hover {
+  transform: none;
+  box-shadow: none;
+}
+.value-item h4 {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--teal);
+  margin-bottom: 6px;
+}
+.value-item p { font-size: 12.5px; color: var(--muted); line-height: 1.6; }
+
+/* ═══════════════════════════════════════
+   SERVICES
+═══════════════════════════════════════ */
+.services {
+  padding: 120px 0;
+  background: var(--linen);
+  position: relative;
+  overflow: hidden;
+}
+.services::before { display: none; }
+.services-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 60px;
+  position: relative;
+  z-index: 1;
+}
+.section-header { margin-bottom: 60px; }
+.section-header .section-intro { color: var(--gold); opacity: .8; }
+.section-heading {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 4vw, 46px);
+  color: var(--teal);
+  line-height: 1.1;
+  margin-bottom: 14px;
+}
+.section-heading em { font-style: italic; color: var(--gold); }
+.section-subhead {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.75;
+  max-width: 500px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.service-card {
+  background: rgba(10,61,71,.5);
+  border: 0.5px solid rgba(200,149,53,.15);
+  border-radius: 10px;
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
+  transition: none;
+}
+.service-card::before {
+  display: none;
+}
+.service-card:hover {
+  border-color: rgba(200,149,53,.15);
+  background: rgba(10,61,71,.5);
+}
+.service-icon {
+  width: 44px; height: 44px;
+  border-radius: 8px;
+  border: 0.5px solid rgba(200,149,53,.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  font-size: 20px;
+}
+.service-card h3 {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--linen);
+  margin-bottom: 10px;
+}
+.service-card p {
+  font-size: 13px;
+  color: rgba(242,232,217,.6);
+  line-height: 1.7;
+
+}
+
+.service-from span {
+  font-size: 22px;
+  color: var(--gold);
+  font-family: var(--font-display);
+  display: block;
+  margin-top: 4px;
+  line-height: 1;
+}
+
+/* ═══════════════════════════════════════
+   PRICING TABLE
+═══════════════════════════════════════ */
+.pricing {
+  padding: 120px 0;
+  background: var(--body);
+}
+.pricing-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+.pricing-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 40px;
+  border-bottom: 0.5px solid var(--border);
+  padding-bottom: 0;
+  overflow-x: auto;
+}
+.tab-btn {
+  font-family: var(--font-label);
+  font-size: 9.5px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 10px 18px;
+  border-bottom: 2px solid transparent;
+  background: none;
+  transition: color .2s, border-color .2s;
+  white-space: nowrap;
+  margin-bottom: -1px;
+}
+.tab-btn:hover { color: var(--teal); }
+.tab-btn.active { color: var(--teal); border-bottom-color: var(--gold); }
+
+.tab-content { display: none; background: white; border-radius: 10px; }
+.tab-content.active { display: block; }
+
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(242,232,217,.04);
+  border: 0.5px solid rgba(200,149,53,.12);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.pricing-table thead {
+  background: var(--teal);
+}
+.pricing-table thead th {
+  font-family: var(--font-label);
+  font-size: 9px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(242,232,217,.6);
+  padding: 14px 20px;
+  text-align: left;
+  font-weight: 400;
+}
+.pricing-table tbody tr {
+  border-bottom: 0.5px solid var(--border);
+  transition: background .15s;
+}
+.pricing-table tbody tr:last-child { border-bottom: none; }
+.pricing-table tbody tr:hover { background: #FAFAF8; }
+.pricing-table td {
+  padding: 14px 20px;
+  font-size: 13px;
+  color: var(--text);
+  vertical-align: top;
+  line-height: 1.55;
+}
+.pricing-table td:first-child { font-weight: 600; color: var(--teal); }
+.pricing-table td .price {
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--gold);
+  line-height: 1;
+}
+.pricing-table td .price-note {
+  font-family: var(--font-label);
+  font-size: 8.5px;
+  color: var(--muted);
+  letter-spacing: .06em;
+  margin-top: 3px;
+}
+.pricing-table td .variant {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 400;
+  margin-top: 2px;
+}
+.tbd {
+  font-family: var(--font-label);
+  font-size: 9px;
+  letter-spacing: .08em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+/* ═══════════════════════════════════════
+   PORTFOLIO
+═══════════════════════════════════════ */
+.portfolio {
+  padding: 120px 0;
+  background: var(--teal3);
+  position: relative;
+  overflow: hidden;
+}
+.portfolio-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+.portfolio-section-header {
+  margin-bottom: 50px;
+}
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 14px;
+}
+.portfolio-card {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 0.5px solid var(--border);
+  transition: transform .25s var(--ease), box-shadow .25s;
+  background: var(--teal);
+  cursor: pointer;
+}
+.portfolio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 48px rgba(10,61,71,.18);
+}
+.portfolio-card:nth-child(1) { grid-row: span 2; }
+.portfolio-thumb {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+}
+.portfolio-card:nth-child(1) .portfolio-thumb {
+  aspect-ratio: unset;
+  height: 100%;
+  min-height: 380px;
+}
+.portfolio-placeholder {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: var(--teal2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.portfolio-card:nth-child(1) .portfolio-placeholder {
+  aspect-ratio: unset;
+  min-height: 380px;
+  flex: 1;
+}
+.portfolio-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    repeating-linear-gradient(
+      45deg,
+      rgba(200,149,53,.04) 0px,
+      rgba(200,149,53,.04) 1px,
+      transparent 1px,
+      transparent 20px
+    );
+}
+.placeholder-icon {
+  font-size: 36px;
+  opacity: .35;
+  position: relative;
+  z-index: 1;
+}
+.placeholder-text {
+  font-family: var(--font-label);
+  font-size: 9px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(200,149,53,.4);
+  position: relative;
+  z-index: 1;
+}
+.portfolio-info {
+  padding: 16px 18px;
+  background: white;
+}
+.portfolio-category {
+  font-family: var(--font-label);
+  font-size: 8.5px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 5px;
+}
+.portfolio-title {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--teal);
+  margin-bottom: 4px;
+}
+.portfolio-desc {
+  font-size: 11.5px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.portfolio-cta {
+  margin-top: 48px;
+  text-align: center;
+}
+.portfolio-cta p {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 20px;
+  font-style: italic;
+  font-family: var(--font-heading);
+}
+
+/* ═══════════════════════════════════════
+   CONTACT / QUOTE
+═══════════════════════════════════════ */
+.contact {
+  padding: 120px 0;
+  background: var(--teal3);
+  position: relative;
+  overflow: hidden;
+}
+.contact::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 10%; bottom: 10%;
+  width: 4px;
+  background: linear-gradient(180deg, var(--gold), var(--terra));
+}
+.contact-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+.contact-left .section-heading { color: var(--linen); }
+.contact-left .section-subhead { color: rgba(242,232,217,.5); margin-bottom: 40px; }
+
+.contact-options { display: flex; flex-direction: column; gap: 14px; margin-bottom: 40px; }
+.contact-option {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  border: 0.5px solid rgba(200,149,53,.2);
+  border-radius: 8px;
+  background: rgba(10,61,71,.4);
+  transition: border-color .2s, background .2s, transform .15s;
+  cursor: pointer;
+}
+.contact-option:hover {
+  border-color: rgba(200,149,53,.5);
+  background: rgba(10,61,71,.6);
+  transform: translateX(4px);
+}
+.contact-option-icon {
+  width: 42px; height: 42px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.contact-option-icon.whatsapp { background: rgba(37,211,102,.12); }
+.contact-option-icon.email { background: rgba(200,149,53,.12); }
+.contact-option-body h4 {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--linen);
+  margin-bottom: 2px;
+}
+.contact-option-body p {
+  font-size: 11.5px;
+  color: rgba(242,232,217,.45);
+  line-height: 1.5;
+}
+.contact-option-arrow {
+  margin-left: auto;
+  color: rgba(200,149,53,.4);
+  font-size: 18px;
+  transition: color .2s, transform .2s;
+}
+.contact-option:hover .contact-option-arrow {
+  color: var(--gold);
+  transform: translateX(3px);
+}
+
+.contact-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.contact-detail-item {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.contact-detail-item .icon { color: var(--gold); opacity: .6; font-size: 14px; }
+.contact-detail-item p {
+  font-family: var(--font-label);
+  font-size: 10px;
+  letter-spacing: .08em;
+  color: rgba(242,232,217,.35);
+}
+
+/* Quote form */
+.quote-form {
+  background: white;
+  border-radius: 12px;
+  padding: 36px;
+  position: relative;
+}
+.quote-form::before {
+  display: none;
+}
+.form-title {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--teal);
+  margin-bottom: 4px;
+}
+.form-subtitle {
+  font-family: var(--font-label);
+  font-size: 9px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.form-group { margin-bottom: 16px; }
+.form-group label {
+  display: block;
+  font-family: var(--font-label);
+  font-size: 8.5px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 7px;
+}
+.form-group input:not([type="checkbox"]):not([type="radio"]),
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 0.5px solid var(--border);
+  border-radius: 5px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--text);
+  background: #FAFAF8;
+  transition: border-color .2s, box-shadow .2s;
+  outline: none;
+  appearance: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(200,149,53,.1);
+  background: white;
+}
+.form-group textarea { resize: vertical; min-height: 90px; line-height: 1.6; }
+.form-group select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239A9690' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+.form-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.form-checkbox input[type="checkbox"] {
+  width: 16px; height: 16px;
+  margin-top: 2px;
+  accent-color: var(--gold);
+  flex-shrink: 0;
+}
+.form-checkbox label {
+  font-size: 11.5px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.btn-submit {
+  width: 100%;
+  padding: 14px;
+  background: var(--gold);
+  color: var(--teal3);
+  font-family: var(--font-label);
+  font-size: 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 4px;
+  transition: background .2s, transform .15s, box-shadow .2s;
+}
+.btn-submit:hover {
+  background: #D9A23E;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(200,149,53,.3);
+}
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 24px 0;
+}
+.form-success .success-icon { font-size: 40px; margin-bottom: 12px; }
+.form-success h3 {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  color: var(--teal);
+  margin-bottom: 8px;
+}
+.form-success p { font-size: 13px; color: var(--muted); }
+
+
+/* ═══════════════════════════════════════
+   TESTIMONIALS
+═══════════════════════════════════════ */
+.testimonials {
+  padding: 120px 0;
+  background: var(--teal3);
+  position: relative;
+  overflow: hidden;
+}
+.testimonials::before {
+  display: none;
+}
+.testimonials-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 60px;
+  position: relative;
+  z-index: 1;
+}
+.testimonials-inner .section-heading { color: var(--linen); }
+.testimonials-inner .section-subhead { color: rgba(242,232,217,.5); }
+
+/* Logo strip */
+.logo-strip {
+  margin-bottom: 60px;
+}
+.logo-strip-label {
+  font-family: var(--font-label);
+  font-size: 9px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: rgba(200,149,53,.45);
+  margin-bottom: 16px;
+  text-align: center;
+}
+.logo-strip-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+.logo-slot {
+  height: 56px;
+  background: rgba(242,232,217,.04);
+  border: 0.5px solid rgba(200,149,53,.12);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color .2s, background .2s;
+}
+.logo-slot img {
+  max-height: 32px;
+  max-width: 80%;
+  object-fit: contain;
+  opacity: .6;
+  filter: none;
+  transition: opacity .2s;
+}
+.logo-slot:hover { border-color: rgba(200,149,53,.25); background: rgba(242,232,217,.07); }
+.logo-slot:hover img { opacity: .85; }
+.logo-placeholder-text {
+  font-family: var(--font-label);
+  font-size: 8px;
+  letter-spacing: .08em;
+  color: rgba(242,232,217,.15);
+  text-transform: uppercase;
+}
+
+/* Testimonial cards */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.testimonial-card {
+  background: rgba(242,232,217,.04);
+  border: 0.5px solid rgba(200,149,53,.12);
+  border-radius: 10px;
+  padding: 28px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+}
+.testimonial-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--gold), var(--terra));
+  border-radius: 3px 0 0 3px;
+}
+.testimonial-quote {
+  font-family: var(--font-heading);
+  font-size: 14.5px;
+  font-style: italic;
+  color: rgba(242,232,217,.75);
+  line-height: 1.7;
+}
+.testimonial-quote::before {
+  content: 'C';
+  font-family: var(--font-display);
+  font-size: 48px;
+  color: var(--gold);
+  opacity: .25;
+  display: block;
+  line-height: .8;
+  margin-bottom: 8px;
+}
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 20px;
+  border-top: 0.5px solid rgba(200,149,53,.1);
+}
+.testimonial-logo-slot {
+  width: 44px; height: 44px;
+  background: rgba(242,232,217,.06);
+  border: 0.5px solid rgba(200,149,53,.15);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.testimonial-logo-slot img {
+  max-width: 32px;
+  max-height: 28px;
+  object-fit: contain;
+  opacity: .7;
+  filter: none;
+}
+.testimonial-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--linen);
+  margin-bottom: 2px;
+}
+.testimonial-role {
+  font-family: var(--font-label);
+  font-size: 8.5px;
+  letter-spacing: .08em;
+  color: rgba(200,149,53,.5);
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .testimonials-inner { padding: 0 32px; }
+  .logo-strip-grid { grid-template-columns: repeat(3, 1fr); }
+  .testimonials-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .logo-strip-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ═══════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════ */
+.footer {
+  background: var(--ink);
+  padding: 60px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+.footer::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--gold), var(--terra));
+}
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 60px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 50px;
+  margin-bottom: 50px;
+}
+.footer-brand .footer-wordmark {
+  font-family: var(--font-display);
+  font-size: 26px;
+  color: var(--linen);
+  margin-bottom: 4px;
+}
+.footer-brand .footer-descriptor {
+  font-family: var(--font-label);
+  font-size: 8.5px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: .6;
+  margin-bottom: 16px;
+}
+.footer-brand p {
+  font-size: 12.5px;
+  color: rgba(242,232,217,.35);
+  line-height: 1.7;
+  max-width: 240px;
+}
+.footer-col h4 {
+  font-family: var(--font-label);
+  font-size: 9px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(200,149,53,.6);
+  margin-bottom: 18px;
+}
+.footer-col ul { display: flex; flex-direction: column; gap: 10px; }
+.footer-col ul li a {
+  font-size: 12.5px;
+  color: rgba(242,232,217,.3);
+  transition: color .2s;
+}
+.footer-col ul li a:hover { color: var(--gold); }
+.footer-contact-item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+.footer-contact-item span:first-child { color: var(--gold); opacity: .5; font-size: 13px; }
+.footer-contact-item span:last-child { font-size: 12px; color: rgba(242,232,217,.3); line-height: 1.5; }
+
+.footer-bottom {
+  border-top: 0.5px solid rgba(200,149,53,.1);
+  padding: 20px 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-bottom p {
+  font-family: var(--font-label);
+  font-size: 8.5px;
+  letter-spacing: .08em;
+  color: rgba(242,232,217,.2);
+}
+.footer-accent {
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold), var(--terra), var(--teal2));
+}
+
+/* ═══════════════════════════════════════
+   FLOATING WHATSAPP
+═══════════════════════════════════════ */
+.fab-whatsapp {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 56px;
+  height: 56px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,.4);
+  z-index: 90;
+  transition: transform .2s var(--ease), box-shadow .2s;
+  font-size: 26px;
+  text-decoration: none;
+  animation: fabPulse 2.5s ease-in-out infinite;
+}
+.fab-whatsapp:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 32px rgba(37,211,102,.5);
+  animation: none;
+}
+@keyframes fabPulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,.4); }
+  50% { box-shadow: 0 4px 28px rgba(37,211,102,.65); }
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; padding: 60px 32px; }
+  .hero-stats { display: none; }
+  .about-inner { grid-template-columns: 1fr; gap: 40px; padding: 0 32px; }
+  .services-inner { padding: 0 32px; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .pricing-inner { padding: 0 32px; }
+  .portfolio-inner { padding: 0 32px; }
+  .portfolio-grid { grid-template-columns: 1fr 1fr; }
+  .portfolio-card:nth-child(1) { grid-row: span 1; }
+  .portfolio-card:nth-child(1) .portfolio-placeholder { min-height: auto; }
+  .contact-inner { grid-template-columns: 1fr; gap: 40px; padding: 0 32px; }
+  .footer-inner { grid-template-columns: 1fr 1fr; padding: 0 32px; }
+  .footer-bottom { padding: 20px 32px; }
+  .nav-links, .nav-cta { display: none; }
+  .nav-mobile-toggle { display: block; }
+  .nav { padding: 0 24px; }
+}
+
+@media (max-width: 600px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .portfolio-grid { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .hero-actions { flex-direction: column; }
+  .btn-primary, .btn-secondary { justify-content: center; }
+  .values-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ FLOATING WHATSAPP ══ -->
+<a href="https://wa.me/254700843493?text=Hi%20Innova%20Exhibits%2C%20I%27d%20like%20to%20discuss%20an%20exhibition%20project." class="fab-whatsapp" target="_blank" rel="noopener" title="Chat on WhatsApp">💬</a>
+
+<!-- ══ NAVIGATION ══ -->
+<nav class="nav" id="nav">
+  <div class="nav-brand">
+    <div class="nav-rule"></div>
+    <div>
+      <div class="nav-wordmark">Innova Exhibits</div>
+      <div class="nav-descriptor">Exhibition &amp; Brand Activation</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#testimonials">Clients</a>
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="#contact" class="nav-cta">Get a Quote</a>
+  <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Open menu">☰</button>
+</nav>
+
+<!-- Mobile nav -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#about" onclick="closeMobileNav()">About</a>
+  <a href="#testimonials" onclick="closeMobileNav()">Clients</a>
+  <a href="#services" onclick="closeMobileNav()">Services</a>
+  <a href="#pricing" onclick="closeMobileNav()">Pricing</a>
+  <a href="#portfolio" onclick="closeMobileNav()">Portfolio</a>
+  <a href="#contact" onclick="closeMobileNav()">Contact</a>
+  <a href="#contact" class="nav-cta" onclick="closeMobileNav()">Get a Quote →</a>
+</div>
+
+<!-- ══ HERO ══ -->
+<section class="hero" id="home">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-glow-left"></div>
+  <div class="hero-glow-right"></div>
+  <div class="hero-rule"></div>
+  <div class="hero-accent-bar"></div>
+
+  <div class="hero-inner">
+    <div>
+      <p class="hero-eyebrow">Exhibition &amp; Brand Activation Studio · Nairobi, Kenya</p>
+      <h1 class="hero-title">Your brand,<br><em>in full view.</em></h1>
+      <p class="hero-tagline">One team. One brief. One invoice.</p>
+      <p class="hero-body">We design and build exhibition stands, produce brand collateral, and supply custom merchandise — for international and local brands exhibiting in Kenya. One team on the ground, so you show up looking exactly as good as you are.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary" style="flex-direction:column;align-items:center;gap:3px;padding:16px;width:100%;max-width:520px;">
+          <span>Book a Free Discovery Call</span>
+          <span style="font-size:8px;letter-spacing:.1em;opacity:.65;font-weight:400;">and get your quotation</span>
+        </a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card">
+        <div class="stat-item">
+          <div class="stat-num">20+</div>
+          <div class="stat-label">International &amp; Local Brands Served</div>
+          <div style="font-family:var(--font-label);font-size:8px;color:rgba(200,149,53,.35);letter-spacing:.08em;margin-top:4px;">Including Kenya · UAE · Uganda · Tanzania</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">8</div>
+          <div class="stat-label">Services Under One Roof</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label" style="margin-bottom:10px;">Brands we've worked with</div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
+            <div style="background:rgba(242,232,217,.06);border:0.5px solid rgba(200,149,53,.12);border-radius:5px;height:36px;display:flex;align-items:center;justify-content:center;">
+              <span style="font-family:var(--font-label);font-size:8px;color:rgba(242,232,217,.2);letter-spacing:.06em;">LOGO</span>
+            </div>
+            <div style="background:rgba(242,232,217,.06);border:0.5px solid rgba(200,149,53,.12);border-radius:5px;height:36px;display:flex;align-items:center;justify-content:center;">
+              <span style="font-family:var(--font-label);font-size:8px;color:rgba(242,232,217,.2);letter-spacing:.06em;">LOGO</span>
+            </div>
+            <div style="background:rgba(242,232,217,.06);border:0.5px solid rgba(200,149,53,.12);border-radius:5px;height:36px;display:flex;align-items:center;justify-content:center;">
+              <span style="font-family:var(--font-label);font-size:8px;color:rgba(242,232,217,.2);letter-spacing:.06em;">LOGO</span>
+            </div>
+            <div style="background:rgba(242,232,217,.06);border:0.5px solid rgba(200,149,53,.12);border-radius:5px;height:36px;display:flex;align-items:center;justify-content:center;">
+              <span style="font-family:var(--font-label);font-size:8px;color:rgba(242,232,217,.2);letter-spacing:.06em;">LOGO</span>
+            </div>
+            <div style="background:rgba(242,232,217,.06);border:0.5px solid rgba(200,149,53,.12);border-radius:5px;height:36px;display:flex;align-items:center;justify-content:center;">
+              <span style="font-family:var(--font-label);font-size:8px;color:rgba(242,232,217,.2);letter-spacing:.06em;">LOGO</span>
+            </div>
+            <div style="background:rgba(242,232,217,.06);border:0.5px solid rgba(200,149,53,.12);border-radius:5px;height:36px;display:flex;align-items:center;justify-content:center;">
+              <span style="font-family:var(--font-label);font-size:8px;color:rgba(242,232,217,.2);letter-spacing:.06em;">LOGO</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ABOUT ══ -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div>
+      <p class="section-intro reveal">01 — About</p>
+      <h2 class="about-heading reveal reveal-d1">We illuminate<br><em>brands.</em></h2>
+      <p class="about-body reveal reveal-d2">Innova Exhibits is an Exhibition &amp; Brand Activation Studio based in Nairobi. We design stands, produce collateral, and supply merchandise — for international companies exhibiting in Kenya and local brands looking to make their mark. One team. One brief. One invoice.</p>
+      <p class="about-body reveal reveal-d2">We're not a print shop. Not a builder. Not an event company. We're the single partner that connects all three — so nothing falls out of tune across your exhibition presence.</p>
+      <div class="about-positioning reveal reveal-d3">
+        <p>"For international companies bringing their brand to Kenya, and local businesses ready to show up properly — Innova Exhibits is the on-the-ground partner that translates your brand into a coherent physical presence, from concept to teardown."</p>
+      </div>
+    </div>
+    <div class="about-right reveal reveal-d2">
+      <div class="values-grid">
+        <div class="value-item">
+          <h4>Craft</h4>
+          <p>Every finish is intentional. Quality is the floor, not the ceiling.</p>
+        </div>
+        <div class="value-item">
+          <h4>Coherence</h4>
+          <p>Every touchpoint sings the same note, owned by one team.</p>
+        </div>
+        <div class="value-item">
+          <h4>Composure</h4>
+          <p>We absorb the chaos of exhibition timelines so you don't have to.</p>
+        </div>
+        <div class="value-item">
+          <h4>Roots</h4>
+          <p>Nairobi-based, globally minded. Local expertise and on-the-ground knowledge for brands arriving from anywhere.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIALS ══ -->
+<section class="testimonials" id="testimonials">
+  <div class="testimonials-inner">
+    <div class="section-header">
+      <p class="section-intro reveal" style="color:var(--gold);">02 — Clients</p>
+      <h2 class="section-heading reveal reveal-d1" style="color:var(--linen);">Trusted by brands<br><em style="color:var(--gold);">across the globe.</em></h2>
+      <p class="section-subhead reveal reveal-d2" style="color:rgba(242,232,217,.5);">From international companies exhibiting in Kenya to local brands making their mark — here is what our clients say.</p>
+    </div>
+
+    <!-- Logo strip -->
+    <div class="logo-strip reveal">
+      <p class="logo-strip-label">Companies we have worked with</p>
+      <div class="logo-strip-grid">
+        <div class="logo-slot"><span class="logo-placeholder-text">Client Logo</span></div>
+        <div class="logo-slot"><span class="logo-placeholder-text">Client Logo</span></div>
+        <div class="logo-slot"><span class="logo-placeholder-text">Client Logo</span></div>
+        <div class="logo-slot"><span class="logo-placeholder-text">Client Logo</span></div>
+        <div class="logo-slot"><span class="logo-placeholder-text">Client Logo</span></div>
+        <div class="logo-slot"><span class="logo-placeholder-text">Client Logo</span></div>
+      </div>
+    </div>
+
+    <!-- Testimonial cards -->
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-quote">&ldquo;Placeholder — your client testimonial will go here. Share the quote with us and we will add it in.&rdquo;</div>
+        <div class="testimonial-author">
+          <div class="testimonial-logo-slot"><span class="logo-placeholder-text">Logo</span></div>
+          <div>
+            <p class="testimonial-name">Client Name</p>
+            <p class="testimonial-role">Title · Company · Country</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-d1">
+        <div class="testimonial-quote">&ldquo;Placeholder — your client testimonial will go here. Share the quote with us and we will add it in.&rdquo;</div>
+        <div class="testimonial-author">
+          <div class="testimonial-logo-slot"><span class="logo-placeholder-text">Logo</span></div>
+          <div>
+            <p class="testimonial-name">Client Name</p>
+            <p class="testimonial-role">Title · Company · Country</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-d2">
+        <div class="testimonial-quote">&ldquo;Placeholder — your client testimonial will go here. Share the quote with us and we will add it in.&rdquo;</div>
+        <div class="testimonial-author">
+          <div class="testimonial-logo-slot"><span class="logo-placeholder-text">Logo</span></div>
+          <div>
+            <p class="testimonial-name">Client Name</p>
+            <p class="testimonial-role">Title · Company · Country</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ SERVICES ══ -->
+<section class="services" id="services">
+  <div class="services-inner">
+    <div class="section-header">
+      <p class="section-intro reveal">03 — Services</p>
+      <h2 class="section-heading reveal reveal-d1">Everything your brand<br>needs <em>to show up.</em></h2>
+      <p class="section-subhead reveal reveal-d2">From the floor plan to the finished merchandise — whether you're flying in from abroad or exhibiting locally, one relationship handles everything.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon">🎨</div>
+        <h3>Design</h3>
+        <p>Brand identity, stand layout concepts, artwork production, and print-ready files. Considered design that translates your brief into a coherent visual presence.</p>
+      </div>
+      <div class="service-card reveal reveal-d1">
+        <div class="service-icon">🏗️</div>
+        <h3>Booth Panel Branding</h3>
+        <p>Shell schemes transformed into branded spaces. Half panels, full panels, and seamless walls — sticker, matte banner, forex, fabric, or lightbox.</p>
+      </div>
+      <div class="service-card reveal reveal-d2">
+        <div class="service-icon">🎪</div>
+        <h3>Advertising Displays</h3>
+        <p>Roll-up banners, teardrop flags, and custom branded gazebo tents. High-visibility formats for expos, activations, and outdoor events.</p>
+      </div>
+      <div class="service-card reveal reveal-d1">
+        <div class="service-icon">🖨️</div>
+        <h3>Print Media</h3>
+        <p>Brochures, flyers, and business cards — produced to spec, on brand, ready for the floor. Print that earns its keep in the room.</p>
+      </div>
+      <div class="service-card reveal reveal-d2">
+        <div class="service-icon">🎁</div>
+        <h3>Branded Merchandise</h3>
+        <p>Pens, notebooks, mugs, T-shirts, hats, keychains, and more. Giveaways that carry your brand beyond the event day.</p>
+      </div>
+      <div class="service-card reveal reveal-d3">
+        <div class="service-icon">🏠</div>
+        <h3>Flooring</h3>
+        <p>Carpet and vinyl flooring — flat or raised 4" platform. The right surface ties the entire stand together.</p>
+      </div>
+      <div class="service-card reveal reveal-d1">
+        <div class="service-icon">🪑</div>
+        <h3>Rentals</h3>
+        <p>Shelves, TVs, tables, chairs, stools, sofas, pedestals, fake plants, and magazine racks. Everything the stand needs, furnished.</p>
+      </div>
+      <div class="service-card reveal reveal-d2">
+        <div class="service-icon">📷</div>
+        <h3>Photography &amp; Videography</h3>
+        <p>Professional documentation of your stand and activation — wide architectural shots, craft detail photography, and event video. Content that works long after the expo closes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PRICING ══ -->
+<section class="pricing" id="pricing">
+  <div class="pricing-inner">
+    <div class="section-header">
+      <p class="section-intro reveal">04 — Pricing</p>
+      <h2 class="section-heading reveal reveal-d1" style="color:var(--teal);">Transparent pricing.<br><em style="color:var(--terra);">No surprises.</em></h2>
+      <p class="section-subhead reveal reveal-d2" style="color:var(--muted);">All prices in USD. Final quotes depend on quantity, finish, and lead time. <a href="#contact" style="color:var(--gold);text-decoration:underline;text-underline-offset:3px;">Request a full quote →</a></p>
+    </div>
+    <div class="pricing-tabs reveal">
+      <button class="tab-btn active" onclick="showTab('panels')">Booth Panels</button>
+      <button class="tab-btn" onclick="showTab('flooring')">Flooring</button>
+      <button class="tab-btn" onclick="showTab('display')">Advertising Display</button>
+      <button class="tab-btn" onclick="showTab('print')">Print Media</button>
+      <button class="tab-btn" onclick="showTab('rentals')">Rentals</button>
+    </div>
+
+    <!-- Booth Panels -->
+    <div class="tab-content active reveal" id="tab-panels">
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Dimensions</th>
+            <th>Option</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Half Panel<span class="variant">Standard Booth Panel</span></td>
+            <td>97cm × 120cm</td>
+            <td>Sticker</td>
+            <td><div class="price">$12</div></td>
+          </tr>
+          <tr>
+            <td>Half Panel<span class="variant">Standard Booth Panel</span></td>
+            <td>97cm × 120cm</td>
+            <td>Matte banner</td>
+            <td><div class="price">$15</div></td>
+          </tr>
+          <tr>
+            <td>Full Panel<span class="variant">Standard Booth Panel</span></td>
+            <td>97cm × 237cm</td>
+            <td>Sticker</td>
+            <td><div class="price">$24</div></td>
+          </tr>
+          <tr>
+            <td>Full Panel<span class="variant">Standard Booth Panel</span></td>
+            <td>97cm × 237cm</td>
+            <td>Matte banner</td>
+            <td><div class="price">$30</div></td>
+          </tr>
+          <tr>
+            <td>Full Seamless Wall</td>
+            <td>3m × 2.4m</td>
+            <td>Forex board + matte sticker</td>
+            <td><div class="price">$200</div></td>
+          </tr>
+          <tr>
+            <td>Full Seamless Wall</td>
+            <td>3m × 2.4m</td>
+            <td>Metal frame + stretched banner</td>
+            <td><div class="price">$150</div></td>
+          </tr>
+          <tr>
+            <td>Full Seamless Wall</td>
+            <td>3m × 2.4m</td>
+            <td>Metal frame + fabric</td>
+            <td><div class="price">$220</div></td>
+          </tr>
+          <tr>
+            <td>Full Seamless Wall</td>
+            <td>3m × 2.4m</td>
+            <td>Metal frame + light box</td>
+            <td><div class="price tbd">Quote</div><div class="price-note">Contact us for pricing</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Flooring -->
+    <div class="tab-content" id="tab-flooring">
+      <table class="pricing-table">
+        <thead>
+          <tr><th>Type</th><th>Surface</th><th>Price</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Flat</td>
+            <td>Carpet</td>
+            <td><div class="price">$50</div></td>
+            <td>Per standard booth area</td>
+          </tr>
+          <tr>
+            <td>Flat</td>
+            <td>Vinyl</td>
+            <td><div class="price">$100</div></td>
+            <td>Per standard booth area</td>
+          </tr>
+          <tr>
+            <td>4" Platform</td>
+            <td>Carpet</td>
+            <td><div class="price tbd">Quote</div></td>
+            <td>Contact us for pricing</td>
+          </tr>
+          <tr>
+            <td>4" Platform</td>
+            <td>Vinyl</td>
+            <td><div class="price tbd">Quote</div></td>
+            <td>Contact us for pricing</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Advertising Display -->
+    <div class="tab-content" id="tab-display">
+      <table class="pricing-table">
+        <thead>
+          <tr><th>Product</th><th>Specification</th><th>Price</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Roll-up Banner</td>
+            <td>Narrow base</td>
+            <td><div class="price">$60</div></td>
+          </tr>
+          <tr>
+            <td>Roll-up Banner</td>
+            <td>Broad base</td>
+            <td><div class="price">$100</div></td>
+          </tr>
+          <tr>
+            <td>Teardrop Banner</td>
+            <td>Standard</td>
+            <td><div class="price">$120</div></td>
+          </tr>
+          <tr>
+            <td>Custom Branded Gazebo Tent</td>
+            <td>3m × 3m, fully branded</td>
+            <td><div class="price">$400</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Print Media -->
+    <div class="tab-content" id="tab-print">
+      <div style="background:white;border:0.5px solid var(--border);border-radius:10px;overflow:hidden;">
+        <div style="background:var(--teal);padding:14px 20px;">
+          <p style="font-family:var(--font-label);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(242,232,217,.6);">Available Print Products</p>
+        </div>
+        <div style="padding:0 20px;">
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-bottom:0.5px solid var(--border);">
+            <div style="padding:16px 0;border-right:0.5px solid var(--border);padding-right:20px;">
+              <p style="font-family:var(--font-label);font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Collateral</p>
+              <p style="font-size:13px;color:var(--teal);font-weight:600;margin-bottom:4px;">Brochures</p>
+              <p style="font-size:12px;color:var(--muted);">Bi-fold, tri-fold, saddle-stitched</p>
+            </div>
+            <div style="padding:16px 20px;border-right:0.5px solid var(--border);">
+              <p style="font-family:var(--font-label);font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Distribution</p>
+              <p style="font-size:13px;color:var(--teal);font-weight:600;margin-bottom:4px;">Flyers</p>
+              <p style="font-size:12px;color:var(--muted);">A4, A5, DL — single or double sided</p>
+            </div>
+            <div style="padding:16px 0 16px 20px;">
+              <p style="font-family:var(--font-label);font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Identity</p>
+              <p style="font-size:13px;color:var(--teal);font-weight:600;margin-bottom:4px;">Business Cards</p>
+              <p style="font-size:12px;color:var(--muted);">Standard, premium stock, foil options</p>
+            </div>
+          </div>
+          <div style="padding:24px 0;display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+            <div style="flex:1;min-width:240px;">
+              <p style="font-size:13px;color:var(--muted);line-height:1.7;">Pricing depends on quantity, paper stock, finish, and turnaround. Send us your brief and we'll come back with a tailored quote — usually within one business day.</p>
+            </div>
+            <a href="#contact" class="btn-primary" style="background:var(--teal);color:var(--linen);flex-shrink:0;">Request a Print Quote &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rentals -->
+    <div class="tab-content" id="tab-rentals">
+      <div style="background:white;border:0.5px solid var(--border);border-radius:10px;overflow:hidden;">
+        <div style="background:var(--teal);padding:14px 20px;">
+          <p style="font-family:var(--font-label);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(242,232,217,.6);">Available Rental Items</p>
+        </div>
+        <div style="padding:20px;">
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px;">
+            <div style="background:#FAFAF8;border:0.5px solid var(--border);border-radius:6px;padding:12px 14px;border-left:2px solid var(--gold);">
+              <p style="font-size:13px;font-weight:600;color:var(--teal);">Shelves</p>
+            </div>
+            <div style="background:#FAFAF8;border:0.5px solid var(--border);border-radius:6px;padding:12px 14px;border-left:2px solid var(--gold);">
+              <p style="font-size:13px;font-weight:600;color:var(--teal);">Magazine Racks</p>
+            </div>
+            <div style="background:#FAFAF8;border:0.5px solid var(--border);border-radius:6px;padding:12px 14px;border-left:2px solid var(--gold);">
+              <p style="font-size:13px;font-weight:600;color:var(--teal);">TVs / Screens</p>
+            </div>
+            <div style="background:#FAFAF8;border:0.5px solid var(--border);border-radius:6px;padding:12px 14px;border-left:2px solid var(--gold);">
+              <p style="font-size:13px;font-weight:600;color:var(--teal);">Tables</p>
+            </div>
+            <div style="background:#FAFAF8;border:0.5px solid var(--border);border-radius:6px;padding:12px 14px;border-left:2px solid var(--gold);">
+              <p style="font-size:13px;font-weight:600;color:var(--teal);">Chairs &amp; Stools</p>
+            </div>
+            <div style="background:#FAFAF8;border:0.5px solid var(--border);border-radius:6px;padding:12px 14px;border-left:2px solid var(--gold);">
+              <p style="font-size:13px;font-weight:600;color:var(--teal);">Sofas</p>
+            </div>
+            <div style="background:#FAFAF8;border:0.5px solid var(--border);border-radius:6px;padding:12px 14px;border-left:2px solid var(--gold);">
+              <p style="font-size:13px;font-weight:600;color:var(--teal);">Fake Plants</p>
+            </div>
+            <div style="background:#FAFAF8;border:0.5px solid var(--border);border-radius:6px;padding:12px 14px;border-left:2px solid var(--gold);">
+              <p style="font-size:13px;font-weight:600;color:var(--teal);">Pedestals</p>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;padding-top:16px;border-top:0.5px solid var(--border);">
+            <div style="flex:1;min-width:240px;">
+              <p style="font-size:13px;color:var(--muted);line-height:1.7;">Rental pricing depends on the item, duration, and event dates. Share your stand plan and we'll put together a complete rental package for you.</p>
+            </div>
+            <a href="#contact" class="btn-primary" style="background:var(--teal);color:var(--linen);flex-shrink:0;">Request a Rentals Quote &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PORTFOLIO ══ -->
+<section class="portfolio" id="portfolio">
+  <div class="portfolio-inner">
+    <div class="portfolio-section-header">
+      <p class="section-intro reveal" style="color:var(--gold);">05 — Portfolio</p>
+      <h2 class="section-heading reveal reveal-d1" style="color:var(--linen);">Work that<br><em style="color:var(--gold);">speaks for itself.</em></h2>
+      <p class="section-subhead reveal reveal-d2" style="color:rgba(242,232,217,.5);">A selection of stands we have built, brands we have dressed, and expos where we have shown up.</p>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-card reveal">
+        <div class="portfolio-placeholder" style="min-height:380px;">
+          <div class="placeholder-icon">🏗️</div>
+          <div class="placeholder-text">Feature Stand</div>
+        </div>
+        <div class="portfolio-info">
+          <p class="portfolio-category">Exhibition Stand · Shell Scheme</p>
+          <p class="portfolio-title">Full Seamless Wall Build</p>
+          <p class="portfolio-desc">Custom-branded 3×2.4m metal frame with fabric. Hall 6, Nairobi International Trade Fair.</p>
+        </div>
+      </div>
+      <div class="portfolio-card reveal reveal-d1">
+        <div class="portfolio-placeholder">
+          <div class="placeholder-icon">🎪</div>
+          <div class="placeholder-text">Outdoor Activation</div>
+        </div>
+        <div class="portfolio-info">
+          <p class="portfolio-category">Brand Activation · Outdoor</p>
+          <p class="portfolio-title">Branded Gazebo Tent</p>
+          <p class="portfolio-desc">3m × 3m custom-branded gazebo for outdoor product activation.</p>
+        </div>
+      </div>
+      <div class="portfolio-card reveal reveal-d2">
+        <div class="portfolio-placeholder">
+          <div class="placeholder-icon">🎁</div>
+          <div class="placeholder-text">Merchandise</div>
+        </div>
+        <div class="portfolio-info">
+          <p class="portfolio-category">Branded Merchandise</p>
+          <p class="portfolio-title">Corporate Giveaway Set</p>
+          <p class="portfolio-desc">Notebooks, pens, mugs, and branded tote bags for a tech company launch.</p>
+        </div>
+      </div>
+      <div class="portfolio-card reveal reveal-d1">
+        <div class="portfolio-placeholder">
+          <div class="placeholder-icon">🖼️</div>
+          <div class="placeholder-text">Print &amp; Collateral</div>
+        </div>
+        <div class="portfolio-info">
+          <p class="portfolio-category">Print Media</p>
+          <p class="portfolio-title">Event Print Suite</p>
+          <p class="portfolio-desc">Roll-up banners, brochures, and flyers for a 3-day exhibition.</p>
+        </div>
+      </div>
+      <div class="portfolio-card reveal reveal-d2">
+        <div class="portfolio-placeholder">
+          <div class="placeholder-icon">📸</div>
+          <div class="placeholder-text">Your Project Here</div>
+        </div>
+        <div class="portfolio-info">
+          <p class="portfolio-category">Real photos coming soon</p>
+          <p class="portfolio-title">Add Your Photos</p>
+          <p class="portfolio-desc">Replace these placeholder cards with real project photography.</p>
+        </div>
+      </div>
+    </div>
+    <div class="portfolio-cta reveal">
+      <p>"The product was strong. The stand did it justice."</p>
+      <a href="#contact" class="btn-primary" style="background:var(--teal);color:var(--linen);display:inline-flex;">Start your project →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ CONTACT / QUOTE ══ -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-left">
+      <p class="section-intro reveal" style="color:var(--gold);">06 — Contact</p>
+      <h2 class="section-heading reveal reveal-d1">Start with a<br><em>free discovery call.</em></h2>
+      <p class="section-subhead reveal reveal-d2">Fill in the form and we&rsquo;ll reach out to schedule a call, understand your brief, and put together your quote. Twenty minutes is enough to get started.</p>
+
+      <div class="contact-options reveal reveal-d2">
+        <a href="https://wa.me/254700843493?text=Hi%20Innova%20Exhibits%2C%20I%27d%20like%20to%20discuss%20a%20project." class="contact-option" target="_blank" rel="noopener">
+          <div class="contact-option-icon whatsapp">💬</div>
+          <div class="contact-option-body">
+            <h4>WhatsApp — Fastest response</h4>
+            <p>Message us directly. We typically reply within the hour.</p>
+          </div>
+          <span class="contact-option-arrow">→</span>
+        </a>
+        <a href="https://mail.google.com/mail/?view=cm&to=hwajihi@gmail.com&su=Discovery%20Call%20%26%20Quote%20Request%20%E2%80%94%20Innova%20Exhibits" target="_blank" rel="noopener" class="contact-option">
+          <div class="contact-option-icon email">✉️</div>
+          <div class="contact-option-body">
+            <h4>Email — For detailed briefs</h4>
+            <p>hwajihi@gmail.com</p>
+          </div>
+          <span class="contact-option-arrow">→</span>
+        </a>
+      </div>
+
+      <div class="contact-detail reveal reveal-d3">
+        <div class="contact-detail-item">
+          <span class="icon">📍</span>
+          <p>Nairobi, Kenya · International &amp; Local Brands</p>
+        </div>
+        <div class="contact-detail-item">
+          <span class="icon">📞</span>
+          <p>+254 700 843 493</p>
+        </div>
+        <div class="contact-detail-item">
+          <span class="icon">🌐</span>
+          <p>innovaexhibits.com</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="quote-form reveal reveal-d2">
+      <h3 class="form-title">Book a Free Discovery Call</h3>
+      <p class="form-subtitle">Tell us about your project &mdash; we&rsquo;ll get back to you within one business day to schedule your call and put together your quote</p>
+
+      <form id="quoteForm" name="discovery-call" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onsubmit="return submitForm(event);">
+        <input type="hidden" name="form-name" value="discovery-call">
+        <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">Full Name *</label>
+            <input type="text" id="fname" name="full-name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="company">Company / Organisation *</label>
+            <input type="text" id="company" name="company" placeholder="Company name" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" placeholder="you@company.com" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone / WhatsApp</label>
+            <input type="tel" id="phone" name="phone" placeholder="e.g. +254 700 000 000 or +971 50 000 0000">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="event">Event / Exhibition Name</label>
+          <input type="text" id="event" name="event-name" placeholder="e.g. Nairobi International Trade Fair 2026">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="eventdate">Approximate Event Date</label>
+            <input type="date" id="eventdate" name="event-date" onclick="this.showPicker()" style="cursor:pointer;">
+          </div>
+          <div class="form-group" style="grid-column:1/-1;">
+            <label>Services Needed</label>
+            <div class="checkbox-grid">
+              <label class="cb-label"><input type="checkbox" name="services" value="Design"> Design</label>
+              <label class="cb-label"><input type="checkbox" name="services" value="Booth Panel Branding"> Booth Panel Branding</label>
+              <label class="cb-label"><input type="checkbox" name="services" value="Advertising Display"> Advertising Display</label>
+              <label class="cb-label"><input type="checkbox" name="services" value="Print Media"> Print Media</label>
+              <label class="cb-label"><input type="checkbox" name="services" value="Branded Merchandise"> Branded Merchandise</label>
+              <label class="cb-label"><input type="checkbox" name="services" value="Flooring"> Flooring</label>
+              <label class="cb-label"><input type="checkbox" name="services" value="Rentals"> Rentals</label>
+              <label class="cb-label"><input type="checkbox" name="services" value="Photography & Videography"> Photography &amp; Videography</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="message">Tell us about your project</label>
+          <textarea id="message" name="message" placeholder="Stand size, booth number, theme, quantities, any specific requirements…"></textarea>
+        </div>
+        <div class="form-group" style="grid-column:1/-1;">
+          <label>Preferred contact method</label>
+          <div style="display:flex;gap:10px;margin-top:6px;">
+            <label class="cb-label" style="flex:1;">
+              <input type="radio" name="contact-preference" value="WhatsApp" required
+                style="width:15px!important;height:15px!important;min-width:15px!important;flex-shrink:0!important;accent-color:var(--gold);cursor:pointer;margin:0!important;"> 
+              Contact me on WhatsApp
+            </label>
+            <label class="cb-label" style="flex:1;">
+              <input type="radio" name="contact-preference" value="Email" required
+                style="width:15px!important;height:15px!important;min-width:15px!important;flex-shrink:0!important;accent-color:var(--gold);cursor:pointer;margin:0!important;"> 
+              Contact me on Email
+            </label>
+          </div>
+        </div>
+        <button type="submit" class="btn-submit">Book My Free Discovery Call →</button>
+      </form>
+
+      <div class="form-success" id="formSuccess">
+        <div class="success-icon">✅</div>
+        <h3>Request received.</h3>
+        <p>We'll be in touch within one business day via your preferred contact method to schedule your free discovery call and put together your quote.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-wordmark">Innova Exhibits</div>
+      <div class="footer-descriptor">Exhibition &amp; Brand Activation Studio</div>
+      <p>The on-the-ground exhibition partner for international and local brands exhibiting in Kenya. One team. One brief. One invoice.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Booth Panel Branding</a></li>
+        <li><a href="#services">Advertising Displays</a></li>
+        <li><a href="#services">Print Media</a></li>
+        <li><a href="#services">Merchandise</a></li>
+        <li><a href="#services">Flooring</a></li>
+        <li><a href="#services">Rentals</a></li>
+        <li><a href="#services">Design</a></li>
+        <li><a href="#services">Photography &amp; Video</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <div class="footer-contact-item"><span>💬</span><span>+254 700 843 493</span></div>
+      <div class="footer-contact-item"><span>✉️</span><span>hwajihi@gmail.com</span></div>
+      <div class="footer-contact-item"><span>📍</span><span>Nairobi, Kenya</span></div>
+      <div class="footer-contact-item"><span>🌐</span><span>innovaexhibits.com</span></div>
+    </div>
+  </div>
+  <div style="border-top:0.5px solid rgba(200,149,53,.1);padding:20px 60px;max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;">
+    <p style="font-family:var(--font-label);font-size:8.5px;letter-spacing:.08em;color:rgba(242,232,217,.2);">© 2026 Innova Exhibits · Nairobi, Kenya · All rights reserved</p>
+    <p style="font-family:var(--font-label);font-size:8.5px;letter-spacing:.08em;color:rgba(242,232,217,.15);">Your brand, in full view.</p>
+  </div>
+  <div class="footer-accent"></div>
+</footer>
+
+<!-- ══ SCRIPTS ══ -->
+<script>
+// ── Sticky nav
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// ── Mobile nav
+const toggle = document.getElementById('mobileToggle');
+const mobileNav = document.getElementById('mobileNav');
+toggle.addEventListener('click', () => {
+  mobileNav.classList.toggle('open');
+  toggle.textContent = mobileNav.classList.contains('open') ? '✕' : '☰';
+});
+function closeMobileNav() {
+  mobileNav.classList.remove('open');
+  toggle.textContent = '☰';
+}
+
+// ── Pricing tabs
+function showTab(id) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelector(`[onclick="showTab('${id}')"]`).classList.add('active');
+  document.getElementById('tab-' + id).classList.add('active');
+}
+
+// ── Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ── Form submission
+function submitForm(e) {
+  e.preventDefault();
+  const name = document.getElementById('fname').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const company = document.getElementById('company').value.trim();
+  if (!name || !email || !company) {
+    alert('Please fill in your name, company, and email address.');
+    return;
+  }
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRe.test(email)) { alert('Please enter a valid email address.'); return; }
+
+  // Build WhatsApp message from form
+  const checkedServices = Array.from(document.querySelectorAll('input[name="services"]:checked')).map(cb => cb.value);
+  const service = checkedServices.length > 0 ? checkedServices.join(', ') : 'Not specified';
+  const event = document.getElementById('event').value || 'Not specified';
+  const message = document.getElementById('message').value || '';
+  const preferWA = document.getElementById('whatsapp-pref').checked;
+
+  if (preferWA) {
+    const waMsg = encodeURIComponent(`Hi Innova Exhibits,\n\nI'd like to request a quote.\n\nName: ${name}\nCompany: ${company}\nService: ${service}\nEvent: ${event}\n${message ? 'Notes: ' + message : ''}`);
+    window.open(`https://wa.me/254700843493?text=${waMsg}`, '_blank');
+  }
+
+  document.getElementById('quoteForm').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+}
+
+// ── Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      const top = target.getBoundingClientRect().top + window.scrollY - 72;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  });
+});
+</script>
+</body>
+</html>
