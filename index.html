@@ -1913,60 +1913,60 @@ button { border: none; cursor: pointer; font-family: inherit; }
         <div class="form-row">
           <div class="form-group">
             <label for="fname">Full Name *</label>
-            <input type="text" id="fname" name="full-name" placeholder="Your name" required>
+            <input type="text" id="fname" name="1. Full Name" placeholder="Your name" required>
           </div>
           <div class="form-group">
             <label for="company">Company / Organisation *</label>
-            <input type="text" id="company" name="company" placeholder="Company name" required>
+            <input type="text" id="company" name="2. Company" placeholder="Company name" required>
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
             <label for="email">Email Address *</label>
-            <input type="email" id="email" name="email" placeholder="you@company.com" required>
+            <input type="email" id="email" name="3. Email" placeholder="you@company.com" required>
           </div>
           <div class="form-group">
             <label for="phone">Phone / WhatsApp</label>
-            <input type="tel" id="phone" name="phone" placeholder="e.g. +254 700 000 000 or +971 50 000 0000">
+            <input type="tel" id="phone" name="4. Phone" placeholder="e.g. +254 700 000 000 or +971 50 000 0000">
           </div>
         </div>
         <div class="form-group">
           <label for="event">Event / Exhibition Name</label>
-          <input type="text" id="event" name="event-name" placeholder="e.g. Nairobi International Trade Fair 2026">
+          <input type="text" id="event" name="5. Event Name" placeholder="e.g. Nairobi International Trade Fair 2026">
         </div>
         <div class="form-row">
           <div class="form-group">
             <label for="eventdate">Approximate Event Date</label>
-            <input type="date" id="eventdate" name="event-date" onclick="this.showPicker()" style="cursor:pointer;">
+            <input type="date" id="eventdate" name="6. Event Date" onclick="this.showPicker()" style="cursor:pointer;">
           </div>
           <div class="form-group" style="grid-column:1/-1;">
             <label>Services Needed</label>
             <div class="checkbox-grid">
-              <label class="cb-label"><input type="checkbox" name="services" value="Design"> Design</label>
-              <label class="cb-label"><input type="checkbox" name="services" value="Booth Panel Branding"> Booth Panel Branding</label>
-              <label class="cb-label"><input type="checkbox" name="services" value="Advertising Display"> Advertising Display</label>
-              <label class="cb-label"><input type="checkbox" name="services" value="Print Media"> Print Media</label>
-              <label class="cb-label"><input type="checkbox" name="services" value="Branded Merchandise"> Branded Merchandise</label>
-              <label class="cb-label"><input type="checkbox" name="services" value="Flooring"> Flooring</label>
-              <label class="cb-label"><input type="checkbox" name="services" value="Rentals"> Rentals</label>
-              <label class="cb-label"><input type="checkbox" name="services" value="Photography & Videography"> Photography &amp; Videography</label>
+              <label class="cb-label"><input type="checkbox" name="7. Services" value="Design"> Design</label>
+              <label class="cb-label"><input type="checkbox" name="7. Services" value="Booth Panel Branding"> Booth Panel Branding</label>
+              <label class="cb-label"><input type="checkbox" name="7. Services" value="Advertising Display"> Advertising Display</label>
+              <label class="cb-label"><input type="checkbox" name="7. Services" value="Print Media"> Print Media</label>
+              <label class="cb-label"><input type="checkbox" name="7. Services" value="Branded Merchandise"> Branded Merchandise</label>
+              <label class="cb-label"><input type="checkbox" name="7. Services" value="Flooring"> Flooring</label>
+              <label class="cb-label"><input type="checkbox" name="7. Services" value="Rentals"> Rentals</label>
+              <label class="cb-label"><input type="checkbox" name="7. Services" value="Photography & Videography"> Photography &amp; Videography</label>
             </div>
           </div>
         </div>
         <div class="form-group">
           <label for="message">Tell us about your project</label>
-          <textarea id="message" name="message" placeholder="Stand size, booth number, theme, quantities, any specific requirements…"></textarea>
+          <textarea id="message" name="8. Message" placeholder="Stand size, booth number, theme, quantities, any specific requirements…"></textarea>
         </div>
         <div class="form-group" style="grid-column:1/-1;">
           <label>Preferred contact method</label>
           <div style="display:flex;gap:10px;margin-top:6px;">
             <label class="cb-label" style="flex:1;">
-              <input type="radio" name="contact-preference" value="WhatsApp" required
+              <input type="radio" name="9. Contact Preference" value="WhatsApp" required
                 style="width:15px!important;height:15px!important;min-width:15px!important;flex-shrink:0!important;accent-color:var(--gold);cursor:pointer;margin:0!important;"> 
               Contact me on WhatsApp
             </label>
             <label class="cb-label" style="flex:1;">
-              <input type="radio" name="contact-preference" value="Email" required
+              <input type="radio" name="9. Contact Preference" value="Email" required
                 style="width:15px!important;height:15px!important;min-width:15px!important;flex-shrink:0!important;accent-color:var(--gold);cursor:pointer;margin:0!important;"> 
               Contact me on Email
             </label>
@@ -2075,7 +2075,7 @@ function submitForm(e) {
   }
   const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRe.test(email)) { alert('Please enter a valid email address.'); return false; }
-  const contactPref = document.querySelector('input[name="contact-preference"]:checked');
+  const contactPref = document.querySelector('input[name="9. Contact Preference"]:checked');
   if (!contactPref) { alert('Please select a preferred contact method.'); return false; }
 
   const form = document.getElementById('quoteForm');
