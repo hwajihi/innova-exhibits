@@ -2071,25 +2071,35 @@ function submitForm(e) {
   const company = document.getElementById('company').value.trim();
   if (!name || !email || !company) {
     alert('Please fill in your name, company, and email address.');
-    return;
+    return false;
   }
   const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRe.test(email)) { alert('Please enter a valid email address.'); return; }
+  if (!emailRe.test(email)) { alert('Please enter a valid email address.'); return false; }
+  const contactPref = document.querySelector('input[name="contact-preference"]:checked');
+  if (!contactPref) { alert('Please select a preferred contact method.'); return false; }
 
-  // Build WhatsApp message from form
-  const checkedServices = Array.from(document.querySelectorAll('input[name="services"]:checked')).map(cb => cb.value);
-  const service = checkedServices.length > 0 ? checkedServices.join(', ') : 'Not specified';
-  const event = document.getElementById('event').value || 'Not specified';
-  const message = document.getElementById('message').value || '';
-  const preferWA = document.getElementById('whatsapp-pref').checked;
-
-  if (preferWA) {
-    const waMsg = encodeURIComponent(`Hi Innova Exhibits,\n\nI'd like to request a quote.\n\nName: ${name}\nCompany: ${company}\nService: ${service}\nEvent: ${event}\n${message ? 'Notes: ' + message : ''}`);
-    window.open(`https://wa.me/254700843493?text=${waMsg}`, '_blank');
+  const form = document.getElementById('quoteForm');
+  const formData = new FormData(form);
+  const params = new URLSearchParams();
+  for (const [key, value] of formData.entries()) {
+    params.append(key, value);
   }
 
-  document.getElementById('quoteForm').style.display = 'none';
-  document.getElementById('formSuccess').style.display = 'block';
+  fetch('https://formspree.io/f/mredevje', {
+    method: 'POST',
+    headers: { 'Accept': 'application/json', 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: params.toString()
+  })
+  .then(response => {
+    form.style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  })
+  .catch(() => {
+    form.style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  });
+
+  return false;
 }
 
 // ── Smooth scroll for anchor links
