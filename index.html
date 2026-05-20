@@ -1908,10 +1908,8 @@ button { border: none; cursor: pointer; font-family: inherit; }
       <h3 class="form-title">Book a Free Discovery Call</h3>
       <p class="form-subtitle">Tell us about your project &mdash; we&rsquo;ll get back to you within one business day to schedule your call and put together your quote</p>
 
-      <form id="quoteForm" name="discovery-call" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onsubmit="return submitForm(event);">
-        <input type="hidden" name="form-name" value="discovery-call">
-        <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
-        
+      <form id="quoteForm" name="discovery-call" method="POST" onsubmit="return submitForm(event);">
+
         <div class="form-row">
           <div class="form-group">
             <label for="fname">Full Name *</label>
