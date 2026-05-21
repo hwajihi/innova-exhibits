@@ -1352,6 +1352,28 @@ button { border: none; cursor: pointer; font-family: inherit; }
     min-width: 500px;
   }
 }
+
+@media (max-width: 600px) {
+  .print-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .print-grid > div {
+    border-right: none !important;
+    border-bottom: 0.5px solid var(--border);
+    padding: 14px 0 !important;
+  }
+  .print-grid > div:last-child {
+    border-bottom: none;
+  }
+  .rentals-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+@media (max-width: 900px) {
+  .rentals-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -1748,7 +1770,7 @@ button { border: none; cursor: pointer; font-family: inherit; }
           <p style="font-family:var(--font-label);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(242,232,217,.6);">Available Print Products</p>
         </div>
         <div style="padding:0 20px;">
-          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-bottom:0.5px solid var(--border);">
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-bottom:0.5px solid var(--border);" class="print-grid">
             <div style="padding:16px 0;border-right:0.5px solid var(--border);padding-right:20px;">
               <p style="font-family:var(--font-label);font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Collateral</p>
               <p style="font-size:13px;color:var(--teal);font-weight:600;margin-bottom:4px;">Brochures</p>
@@ -1782,7 +1804,7 @@ button { border: none; cursor: pointer; font-family: inherit; }
           <p style="font-family:var(--font-label);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(242,232,217,.6);">Available Rental Items</p>
         </div>
         <div style="padding:20px;">
-          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px;">
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px;" class="rentals-grid">
             <div style="background:#FAFAF8;border:0.5px solid var(--border);border-radius:6px;padding:12px 14px;border-left:2px solid var(--gold);">
               <p style="font-size:13px;font-weight:600;color:var(--teal);">Shelves</p>
             </div>
