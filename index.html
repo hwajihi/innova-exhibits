@@ -704,8 +704,8 @@ button { border: none; cursor: pointer; font-family: inherit; }
   cursor: pointer;
 }
 .portfolio-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 48px rgba(10,61,71,.18);
+  transform: none;
+  box-shadow: none;
 }
 .portfolio-card:nth-child(1) { grid-row: span 2; }
 .portfolio-thumb {
@@ -1383,18 +1383,6 @@ button { border: none; cursor: pointer; font-family: inherit; }
 }
 @media (max-width: 600px) {
   #portfolio-grid-main .portfolio-card { width: 100% !important; height: auto !important; }
-}
-
-/* Portfolio image reveal on hover */
-.portfolio-img {
-  transition: object-fit 0s, transform 0.4s ease;
-}
-.portfolio-card:hover .portfolio-img-wrap {
-  overflow: hidden;
-}
-.portfolio-card:hover .portfolio-img {
-  object-fit: contain !important;
-  transform: none;
 }
 </style>
 </head>
