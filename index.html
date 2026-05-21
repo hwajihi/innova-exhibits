@@ -1291,7 +1291,6 @@ button { border: none; cursor: pointer; font-family: inherit; }
   .services-grid { grid-template-columns: 1fr 1fr; }
   .pricing-inner { padding: 0 32px; }
   .portfolio-inner { padding: 0 32px; }
-  .portfolio-grid { grid-template-columns: 1fr 1fr; }
   .portfolio-card:nth-child(1) { grid-row: span 1; }
   .portfolio-card:nth-child(1) .portfolio-placeholder { min-height: auto; }
   .contact-inner { grid-template-columns: 1fr; gap: 40px; padding: 0 32px; }
@@ -1304,7 +1303,6 @@ button { border: none; cursor: pointer; font-family: inherit; }
 
 @media (max-width: 600px) {
   .services-grid { grid-template-columns: 1fr; }
-  .portfolio-grid { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .hero-actions { flex-direction: column; }
@@ -1373,6 +1371,18 @@ button { border: none; cursor: pointer; font-family: inherit; }
   .rentals-grid {
     grid-template-columns: 1fr 1fr !important;
   }
+}
+
+#portfolio-grid-main {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 16px !important;
+}
+@media (max-width: 900px) {
+  #portfolio-grid-main .portfolio-card { width: calc(50% - 8px) !important; }
+}
+@media (max-width: 600px) {
+  #portfolio-grid-main .portfolio-card { width: 100% !important; height: auto !important; }
 }
 </style>
 </head>
@@ -1580,8 +1590,8 @@ button { border: none; cursor: pointer; font-family: inherit; }
       </div>
       <div class="service-card">
         <div class="service-icon">🏗️</div>
-        <h3>Booth Panel Branding</h3>
-        <p>Shell schemes transformed into branded spaces. Half panels, full panels, and seamless walls — sticker, matte banner, forex, fabric, or lightbox.</p>
+        <h3>Booth Panel Design</h3>
+        <p>Shell schemes transformed into branded spaces. Half panels, full panels, and seamless walls — sticker, matte banner, forex, fabric, or lightbox. We also supply carpet and vinyl flooring to complete the stand.</p>
       </div>
       <div class="service-card">
         <div class="service-icon">🎪</div>
@@ -1599,11 +1609,6 @@ button { border: none; cursor: pointer; font-family: inherit; }
         <p>Pens, notebooks, mugs, T-shirts, hats, keychains, and more. Giveaways that carry your brand beyond the event day.</p>
       </div>
       <div class="service-card">
-        <div class="service-icon">🏠</div>
-        <h3>Flooring</h3>
-        <p>Carpet and vinyl flooring — flat or raised 4" platform. The right surface ties the entire stand together.</p>
-      </div>
-      <div class="service-card">
         <div class="service-icon">🪑</div>
         <h3>Rentals</h3>
         <p>Shelves, TVs, tables, chairs, stools, sofas, pedestals, fake plants, and magazine racks. Everything the stand needs, furnished.</p>
@@ -1614,7 +1619,6 @@ button { border: none; cursor: pointer; font-family: inherit; }
         <p>Professional documentation of your stand and activation — wide architectural shots, craft detail photography, and event video. Content that works long after the expo closes.</p>
       </div>
     </div>
-  </div>
 </section>
 
 <!-- ══ PRICING ══ -->
@@ -1627,7 +1631,6 @@ button { border: none; cursor: pointer; font-family: inherit; }
     </div>
     <div class="pricing-tabs reveal">
       <button class="tab-btn active" onclick="showTab('panels')">Booth Panels</button>
-      <button class="tab-btn" onclick="showTab('flooring')">Flooring</button>
       <button class="tab-btn" onclick="showTab('display')">Advertising Display</button>
       <button class="tab-btn" onclick="showTab('print')">Print Media</button>
       <button class="tab-btn" onclick="showTab('rentals')">Rentals</button>
@@ -1693,17 +1696,10 @@ button { border: none; cursor: pointer; font-family: inherit; }
             <td>Metal frame + light box</td>
             <td><div class="price tbd">Quote</div><div class="price-note">Contact us for pricing</div></td>
           </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- Flooring -->
-    <div class="tab-content" id="tab-flooring">
-      <table class="pricing-table">
-        <thead>
-          <tr><th>Type</th><th>Surface</th><th>Price</th><th>Notes</th></tr>
-        </thead>
-        <tbody>
+                    
+          <tr style="background:var(--teal);">
+            <td colspan="4" style="font-family:var(--font-label);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(242,232,217,.6);padding:10px 20px;">Flooring</td>
+          </tr>
           <tr>
             <td>Flat</td>
             <td>Carpet</td>
@@ -1850,70 +1846,56 @@ button { border: none; cursor: pointer; font-family: inherit; }
       <h2 class="section-heading reveal reveal-d1" style="color:var(--linen);">Work that<br><em style="color:var(--gold);">speaks for itself.</em></h2>
       <p class="section-subhead reveal reveal-d2" style="color:rgba(242,232,217,.5);">A selection of stands we have built, brands we have dressed, and expos where we have shown up.</p>
     </div>
-    <div class="portfolio-grid" style="display:flex;flex-direction:column;gap:16px;">
-
-      <div class="portfolio-row">
-        <div class="portfolio-card reveal" style="display:flex;flex-direction:column;height:360px;">
-          <div style="height:220px;overflow:hidden;flex-shrink:0;">
-            <img src="images/buyu.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
-          </div>
-          <div class="portfolio-info" style="flex:1;overflow:hidden;">
-            <p class="portfolio-category">Exhibition Stand · Premium Build · Tanzania</p>
-            <p class="portfolio-title">Buyu Beach Residency</p>
-            <p class="portfolio-desc">Full seamless wall build with branded panels and furniture for a luxury real estate developer from Zanzibar.</p>
-          </div>
-        </div>
-        <div class="portfolio-card reveal reveal-d1" style="display:flex;flex-direction:column;height:360px;">
-          <div style="height:220px;overflow:hidden;flex-shrink:0;">
-            <img src="images/aqiq.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
-          </div>
-          <div class="portfolio-info" style="flex:1;overflow:hidden;">
-            <p class="portfolio-category">Exhibition Stand · Shell Scheme · Kenya</p>
-            <p class="portfolio-title">Aqiq Trading</p>
-            <p class="portfolio-desc">Full booth panel branding across a shell scheme for a Mombasa-based industrial products distributor.</p>
-          </div>
-        </div>
-        <div class="portfolio-card reveal reveal-d2" style="display:flex;flex-direction:column;height:360px;">
-          <div style="height:220px;overflow:hidden;flex-shrink:0;">
-            <img src="images/safestep.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
-          </div>
-          <div class="portfolio-info" style="flex:1;overflow:hidden;">
-            <p class="portfolio-category">Exhibition Stand · International · UK</p>
-            <p class="portfolio-title">Safe Step Global UK</p>
-            <p class="portfolio-desc">Branded stand for a UK safety gear company at the Africa Trade Expo, Nairobi 2025.</p>
-          </div>
+    <div id="portfolio-grid-main" class="portfolio-grid" style="display:flex;flex-wrap:wrap;gap:16px;">
+      <div class="portfolio-card reveal" style="display:flex;flex-direction:column;height:360px;width:calc(33.333% - 11px);flex-shrink:0;">
+        <div style="height:220px;overflow:hidden;flex-shrink:0;"><img src="images/buyu.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
+        <div class="portfolio-info" style="flex:1;overflow:hidden;">
+          <p class="portfolio-category">Exhibition Stand · Premium Build · Tanzania</p>
+          <p class="portfolio-title">Buyu Beach Residency</p>
+          <p class="portfolio-desc">Full seamless wall build with branded panels and furniture for a luxury real estate developer from Zanzibar.</p>
         </div>
       </div>
-
-      <div class="portfolio-row portfolio-row-center">
-        <div class="portfolio-col">
-          <div class="portfolio-card reveal reveal-d1" style="display:flex;flex-direction:column;height:360px;">
-          <div style="height:220px;overflow:hidden;flex-shrink:0;">
-            <img src="images/bestbuy.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
-          </div>
-          <div class="portfolio-info" style="flex:1;overflow:hidden;">
-            <p class="portfolio-category">Exhibition Stand · Full Booth</p>
-            <p class="portfolio-title">Best Buy Distributors</p>
-            <p class="portfolio-desc">Multi-panel branded booth for a wholesale grocery distributor showcasing multiple product lines.</p>
-          </div>
-        </div>
-        </div>
-        <div class="portfolio-col">
-          <div class="portfolio-card reveal reveal-d2" style="display:flex;flex-direction:column;height:360px;">
-          <div style="height:220px;overflow:hidden;flex-shrink:0;">
-            <img src="images/atglass.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
-          </div>
-          <div class="portfolio-info" style="flex:1;overflow:hidden;">
-            <p class="portfolio-category">Work in Progress · Setup Day</p>
-            <p class="portfolio-title">AT Glass Limited</p>
-            <p class="portfolio-desc">Behind the scenes — stand panels being installed ahead of opening day for a glass manufacturing company.</p>
-          </div>
-        </div>
+      <div class="portfolio-card reveal reveal-d1" style="display:flex;flex-direction:column;height:360px;width:calc(33.333% - 11px);flex-shrink:0;">
+        <div style="height:220px;overflow:hidden;flex-shrink:0;"><img src="images/aqiq.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
+        <div class="portfolio-info" style="flex:1;overflow:hidden;">
+          <p class="portfolio-category">Exhibition Stand · Shell Scheme · Kenya</p>
+          <p class="portfolio-title">Aqiq Trading</p>
+          <p class="portfolio-desc">Full booth panel branding across a shell scheme for a Mombasa-based industrial products distributor.</p>
         </div>
       </div>
-
+      <div class="portfolio-card reveal reveal-d2" style="display:flex;flex-direction:column;height:360px;width:calc(33.333% - 11px);flex-shrink:0;">
+        <div style="height:220px;overflow:hidden;flex-shrink:0;"><img src="images/safestep.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
+        <div class="portfolio-info" style="flex:1;overflow:hidden;">
+          <p class="portfolio-category">Exhibition Stand · International · UK</p>
+          <p class="portfolio-title">Safe Step Global UK</p>
+          <p class="portfolio-desc">Branded stand for a UK safety gear company at the Africa Trade Expo, Nairobi 2025.</p>
+        </div>
+      </div>
+      <div class="portfolio-card reveal reveal-d1" style="display:flex;flex-direction:column;height:360px;width:calc(33.333% - 11px);flex-shrink:0;">
+        <div style="height:220px;overflow:hidden;flex-shrink:0;"><img src="images/bestbuy.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
+        <div class="portfolio-info" style="flex:1;overflow:hidden;">
+          <p class="portfolio-category">Exhibition Stand · Full Booth</p>
+          <p class="portfolio-title">Best Buy Distributors</p>
+          <p class="portfolio-desc">Multi-panel branded booth for a wholesale grocery distributor, including custom branding across all shelving units within the stand.</p>
+        </div>
+      </div>
+      <div class="portfolio-card reveal reveal-d2" style="display:flex;flex-direction:column;height:360px;width:calc(33.333% - 11px);flex-shrink:0;">
+        <div style="height:220px;overflow:hidden;flex-shrink:0;"><img src="images/atglass.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
+        <div class="portfolio-info" style="flex:1;overflow:hidden;">
+          <p class="portfolio-category">Work in Progress · Setup Day</p>
+          <p class="portfolio-title">AT Glass Limited</p>
+          <p class="portfolio-desc">Behind the scenes — stand panels being installed ahead of opening day for a glass manufacturing company.</p>
+        </div>
+      </div>
+      <div class="portfolio-card reveal reveal-d2" style="display:flex;flex-direction:column;height:360px;width:calc(33.333% - 11px);flex-shrink:0;">
+        <div style="height:220px;overflow:hidden;flex-shrink:0;"><img src="images/merchandise.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
+        <div class="portfolio-info" style="flex:1;overflow:hidden;">
+          <p class="portfolio-category">Branded Merchandise</p>
+          <p class="portfolio-title">Custom Merchandise Suite</p>
+          <p class="portfolio-desc">Branded notebooks, bottles, pens, wallets, bags, and hard hats — produced for clients across multiple events and industries.</p>
+        </div>
+      </div>
     </div>
-    
     <div class="portfolio-cta reveal">
       <p style="color:rgba(242,232,217,.5);">"The product was strong. The stand did it justice."</p>
       <a href="#contact" class="btn-primary" style="background:var(--teal);color:var(--linen);display:inline-flex;">Start your project →</a>
