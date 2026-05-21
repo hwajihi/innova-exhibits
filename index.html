@@ -582,11 +582,12 @@ button { border: none; cursor: pointer; font-family: inherit; }
 }
 .pricing-tabs {
   display: flex;
-  gap: 6px;
+  flex-wrap: wrap;
+  gap: 4px;
   margin-bottom: 40px;
   border-bottom: 0.5px solid var(--border);
   padding-bottom: 0;
-  overflow-x: auto;
+  overflow-x: visible;
 }
 .tab-btn {
   font-family: var(--font-label);
@@ -594,12 +595,13 @@ button { border: none; cursor: pointer; font-family: inherit; }
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--muted);
-  padding: 10px 18px;
+  padding: 10px 16px;
   border-bottom: 2px solid transparent;
   background: none;
   transition: color .2s, border-color .2s;
   white-space: nowrap;
   margin-bottom: -1px;
+  flex-shrink: 0;
 }
 .tab-btn:hover { color: var(--teal); }
 .tab-btn.active { color: var(--teal); border-bottom-color: var(--gold); }
@@ -1456,19 +1458,19 @@ button { border: none; cursor: pointer; font-family: inherit; }
     </div>
     <div class="about-right reveal reveal-d2">
       <div class="values-grid">
-        <div class="value-item">
+        <div class="value-item reveal">
           <h4>Craft</h4>
           <p>Every finish is intentional. Quality is the floor, not the ceiling.</p>
         </div>
-        <div class="value-item">
+        <div class="value-item reveal reveal-d1">
           <h4>Coherence</h4>
           <p>Every touchpoint sings the same note, owned by one team.</p>
         </div>
-        <div class="value-item">
+        <div class="value-item reveal reveal-d2">
           <h4>Composure</h4>
           <p>We absorb the chaos of exhibition timelines so you don't have to.</p>
         </div>
-        <div class="value-item">
+        <div class="value-item reveal reveal-d3">
           <h4>Roots</h4>
           <p>Nairobi-based, globally minded. Local expertise and on-the-ground knowledge for brands arriving from anywhere.</p>
         </div>
