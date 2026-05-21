@@ -1384,6 +1384,18 @@ button { border: none; cursor: pointer; font-family: inherit; }
 @media (max-width: 600px) {
   #portfolio-grid-main .portfolio-card { width: 100% !important; height: auto !important; }
 }
+
+/* Portfolio image reveal on hover */
+.portfolio-img {
+  transition: object-fit 0s, transform 0.4s ease;
+}
+.portfolio-card:hover .portfolio-img-wrap {
+  overflow: hidden;
+}
+.portfolio-card:hover .portfolio-img {
+  object-fit: contain !important;
+  transform: none;
+}
 </style>
 </head>
 <body>
@@ -1452,7 +1464,7 @@ button { border: none; cursor: pointer; font-family: inherit; }
           <div style="font-family:var(--font-label);font-size:8px;color:rgba(200,149,53,.35);letter-spacing:.08em;margin-top:4px;">Including UAE · Uganda · Tanzania · UK</div>
         </div>
         <div class="stat-item">
-          <div class="stat-num">8</div>
+          <div class="stat-num">7</div>
           <div class="stat-label">Services Under One Roof</div>
         </div>
         <div class="stat-item">
@@ -1848,7 +1860,7 @@ button { border: none; cursor: pointer; font-family: inherit; }
     </div>
     <div id="portfolio-grid-main" class="portfolio-grid" style="display:flex;flex-wrap:wrap;gap:16px;">
       <div class="portfolio-card reveal" style="display:flex;flex-direction:column;height:360px;width:calc(33.333% - 11px);flex-shrink:0;">
-        <div style="height:220px;overflow:hidden;flex-shrink:0;"><img src="images/buyu.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
+        <div class="portfolio-img-wrap" style="height:220px;overflow:hidden;flex-shrink:0;background:var(--teal2);"><img class="portfolio-img" src="images/buyu.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
         <div class="portfolio-info" style="flex:1;overflow:hidden;">
           <p class="portfolio-category">Exhibition Stand · Premium Build · Tanzania</p>
           <p class="portfolio-title">Buyu Beach Residency</p>
@@ -1856,7 +1868,7 @@ button { border: none; cursor: pointer; font-family: inherit; }
         </div>
       </div>
       <div class="portfolio-card reveal reveal-d1" style="display:flex;flex-direction:column;height:360px;width:calc(33.333% - 11px);flex-shrink:0;">
-        <div style="height:220px;overflow:hidden;flex-shrink:0;"><img src="images/aqiq.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
+        <div class="portfolio-img-wrap" style="height:220px;overflow:hidden;flex-shrink:0;background:var(--teal2);"><img class="portfolio-img" src="images/aqiq.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
         <div class="portfolio-info" style="flex:1;overflow:hidden;">
           <p class="portfolio-category">Exhibition Stand · Shell Scheme · Kenya</p>
           <p class="portfolio-title">Aqiq Trading</p>
@@ -1864,7 +1876,7 @@ button { border: none; cursor: pointer; font-family: inherit; }
         </div>
       </div>
       <div class="portfolio-card reveal reveal-d2" style="display:flex;flex-direction:column;height:360px;width:calc(33.333% - 11px);flex-shrink:0;">
-        <div style="height:220px;overflow:hidden;flex-shrink:0;"><img src="images/safestep.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
+        <div class="portfolio-img-wrap" style="height:220px;overflow:hidden;flex-shrink:0;background:var(--teal2);"><img class="portfolio-img" src="images/safestep.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
         <div class="portfolio-info" style="flex:1;overflow:hidden;">
           <p class="portfolio-category">Exhibition Stand · International · UK</p>
           <p class="portfolio-title">Safe Step Global UK</p>
@@ -1872,7 +1884,7 @@ button { border: none; cursor: pointer; font-family: inherit; }
         </div>
       </div>
       <div class="portfolio-card reveal reveal-d1" style="display:flex;flex-direction:column;height:360px;width:calc(33.333% - 11px);flex-shrink:0;">
-        <div style="height:220px;overflow:hidden;flex-shrink:0;"><img src="images/bestbuy.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
+        <div class="portfolio-img-wrap" style="height:220px;overflow:hidden;flex-shrink:0;background:var(--teal2);"><img class="portfolio-img" src="images/bestbuy.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
         <div class="portfolio-info" style="flex:1;overflow:hidden;">
           <p class="portfolio-category">Exhibition Stand · Full Booth</p>
           <p class="portfolio-title">Best Buy Distributors</p>
@@ -1880,7 +1892,7 @@ button { border: none; cursor: pointer; font-family: inherit; }
         </div>
       </div>
       <div class="portfolio-card reveal reveal-d2" style="display:flex;flex-direction:column;height:360px;width:calc(33.333% - 11px);flex-shrink:0;">
-        <div style="height:220px;overflow:hidden;flex-shrink:0;"><img src="images/atglass.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
+        <div class="portfolio-img-wrap" style="height:220px;overflow:hidden;flex-shrink:0;background:var(--teal2);"><img class="portfolio-img" src="images/atglass.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
         <div class="portfolio-info" style="flex:1;overflow:hidden;">
           <p class="portfolio-category">Work in Progress · Setup Day</p>
           <p class="portfolio-title">AT Glass Limited</p>
@@ -1888,7 +1900,7 @@ button { border: none; cursor: pointer; font-family: inherit; }
         </div>
       </div>
       <div class="portfolio-card reveal reveal-d2" style="display:flex;flex-direction:column;height:360px;width:calc(33.333% - 11px);flex-shrink:0;">
-        <div style="height:220px;overflow:hidden;flex-shrink:0;"><img src="images/merchandise.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
+        <div class="portfolio-img-wrap" style="height:220px;overflow:hidden;flex-shrink:0;background:var(--teal2);"><img class="portfolio-img" src="images/merchandise.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center bottom;"></div>
         <div class="portfolio-info" style="flex:1;overflow:hidden;">
           <p class="portfolio-category">Branded Merchandise</p>
           <p class="portfolio-title">Custom Merchandise Suite</p>
