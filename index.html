@@ -1285,7 +1285,7 @@ button { border: none; cursor: pointer; font-family: inherit; }
 ═══════════════════════════════════════ */
 @media (max-width: 900px) {
   .hero-inner { grid-template-columns: 1fr; padding: 60px 32px; }
-  .hero-stats { display: none; }
+  .hero-stats { display: block; margin-top: 32px; }
   .about-inner { grid-template-columns: 1fr; gap: 40px; padding: 0 32px; }
   .services-inner { padding: 0 32px; }
   .services-grid { grid-template-columns: 1fr 1fr; }
@@ -1383,6 +1383,30 @@ button { border: none; cursor: pointer; font-family: inherit; }
 }
 @media (max-width: 600px) {
   #portfolio-grid-main .portfolio-card { width: 100% !important; height: auto !important; }
+}
+
+@media (max-width: 900px) {
+  .hero-stats { display: block; margin-top: 32px; }
+  .stat-card {
+    background: transparent;
+    border: none;
+    backdrop-filter: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+  }
+  .stat-card::before { display: none; }
+  .stat-item {
+    flex: 1;
+    padding: 16px 8px !important;
+    border-bottom: none !important;
+    border-right: 0.5px solid rgba(200,149,53,.2);
+    text-align: center;
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num { font-size: 28px !important; }
+  .stat-label { font-size: 8px !important; }
 }
 </style>
 </head>
